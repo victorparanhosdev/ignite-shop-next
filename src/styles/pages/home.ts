@@ -14,6 +14,9 @@ export const Product= styled('a', {
     position: 'relative',
     borderRadius: 8,
     cursor: 'pointer',
+    display: 'flex',
+    alignItems: 'center',
+    //overflow: 'hidden',
 
 
 
@@ -29,17 +32,18 @@ export const Product= styled('a', {
 
     div: {
         position: 'absolute',
-        bottom: 0,
-        left: 0,
-        width: '100%',
-        backgroundColor: '$gray800',
-        padding: '3.2rem 4rem 3.2rem',
+        bottom: '0.4rem',
+        left: '0.4rem',
+        right: '0.4rem',
+        backgroundColor: 'rgba(0, 0, 0, 0.6)',
+        padding: '3.2rem',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
+   
 
-        transform: 'translateY(120%)',
-        transition: 'transform 0.4s, opacity 0.4s',
+        transform: 'translateY(110%)',
+        transition: 'all 0.3s ease-in-out',
         opacity: 0,
         borderRadius: 6,
 
