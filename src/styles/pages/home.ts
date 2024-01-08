@@ -10,13 +10,12 @@ export const HomeContainer= styled('main', {
 
 export const Product= styled('a', {
     background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
-    width: '69.6rem',
     position: 'relative',
     borderRadius: 8,
     cursor: 'pointer',
     display: 'flex',
     alignItems: 'center',
-    //overflow: 'hidden',
+    overflow: 'hidden',
 
 
 
@@ -25,12 +24,8 @@ export const Product= styled('a', {
         width: '100%',
     },
 
-    '&:hover div': {
-        transform: 'translateY(0%)',
-        opacity: 1,
-    },
 
-    div: {
+    footer: {
         position: 'absolute',
         bottom: '0.4rem',
         left: '0.4rem',
@@ -58,5 +53,15 @@ export const Product= styled('a', {
             fontWeight: 'bold',
             fontSize: '2.4rem'
         }
-    }
+    },
+
+    
+    '&:hover': {
+
+        footer: {
+            transform: 'translateY(0%)',
+            opacity: 1,
+        }
+       
+    },
 })
