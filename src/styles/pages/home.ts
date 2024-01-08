@@ -15,13 +15,14 @@ export const Product= styled('a', {
     cursor: 'pointer',
     display: 'flex',
     alignItems: 'center',
+    justifyContent: 'center',
     overflow: 'hidden',
 
 
 
     img: {
         objectFit: 'cover',
-        width: '100%',
+        height: 'auto'
     },
 
 
