@@ -8,6 +8,7 @@ import Image from 'next/image'
 
 import { stripe } from '@/lib/stripe'
 import Stripe from 'stripe'
+import Link from 'next/link'
 
 
 interface HomeProps {
@@ -33,13 +34,15 @@ export default function Home({products}: HomeProps) {
     <HomeContainer ref={slideRef} className="keen-slider">
      {products.map(products=> {
       return(
-        <Product key={products.id} className="keen-slider__slide number-slide1">
+        <Link href={`/product/${products.id}`} key={products.id}>
+        <Product className="keen-slider__slide number-slide1">
         <Image width={520} height={480} src={products.imageUrl} alt="" priority />
         <footer>
           <strong>{products.name}</strong>
           <span>{products.price}</span>
         </footer>
       </Product>
+        </Link>
       )
      })}
     </HomeContainer>  

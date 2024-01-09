@@ -42,7 +42,7 @@ export const Product= styled('a', {
         transition: 'all 0.3s ease-in-out',
         opacity: 0,
         borderRadius: 6,
-
+        color: '$gray300',
        
 
         strong: {
