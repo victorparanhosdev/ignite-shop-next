@@ -8,7 +8,8 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { stripe } from "@/lib/stripe";
 import Stripe from "stripe";
 import { useRouter } from "next/router";
-import Head from "next/head";
+import axios from "axios";
+import { useState } from "react";
 
 interface ProductProps {
   product: {
@@ -23,8 +24,25 @@ interface ProductProps {
 
 export default function Product({ product }: ProductProps) {
 
-  function handleBuyProduct(){
-    console.log(product.defaultPriceId)
+const [isLoading, setLoading] = useState(false)
+
+ async function handleBuyProduct(){
+
+  try {
+    setLoading(true)
+    const response = await axios.post('/api/checkout', {
+      priceId: product.defaultPriceId,
+    })
+    const {checkoutUrl} = response.data
+    window.location.href = checkoutUrl
+
+  }catch(error) {
+    setLoading(false)
+    alert('Erro ao direcionar checkout!')
+  }
+
+    
+
   }
   const { isFallback } = useRouter();
 
@@ -34,9 +52,6 @@ export default function Product({ product }: ProductProps) {
 
   return (
     <>
-      <Head>
-        <title>{product.name} | Ignite Shop</title>
-      </Head>
       <ProductHome>
         <ImageContainer>
           <Image width={520} height={480} src={product.imageUrl} alt="" />
@@ -47,7 +62,7 @@ export default function Product({ product }: ProductProps) {
           <span>{product.price}</span>
           <p>{product.description}</p>
 
-          <button onClick={handleBuyProduct}>Comprar agora</button>
+          <button disabled={isLoading} onClick={handleBuyProduct}>Comprar agora</button>
         </DetailsContainer>
       </ProductHome>
     </>
@@ -61,9 +76,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
-  params,
-}) => {
+export const getStaticProps: GetStaticProps<any, { id: string }> = async ({params}) => {
   const productID = params!.id;
 
   const product = await stripe.products.retrieve(productID, {

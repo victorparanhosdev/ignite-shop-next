@@ -57,7 +57,13 @@ export const DetailsContainer = styled('div', {
         color: '$white',
         fontWeight: 'bold',
 
-        '&:hover': {
+        '&:disabled': {
+            opacity: 0.6,
+            cursor: 'not-allowed',
+
+        },
+
+        '&:not(:disabled):hover': {
             transition: 'filter 0.4s',
             filter: 'brightness(0.8)',
         }
