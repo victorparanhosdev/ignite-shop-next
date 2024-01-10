@@ -8,7 +8,7 @@ export const HomeContainer= styled('main', {
 
 })
 
-export const Product= styled('a', {
+export const Product= styled('div', {
     background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
     position: 'relative',
     borderRadius: 8,
