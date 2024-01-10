@@ -40,7 +40,7 @@ export const SuccessContainer = styled('main', {
 export const ImageContainer = styled('div', {
     width: '100%',
     maxWidth: '13rem',
-    height: '14.5rem',
+    minHeight: '14.5rem',
     background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
     borderRadius: 8,
     padding: '1rem',
@@ -53,5 +53,7 @@ export const ImageContainer = styled('div', {
   
     img: {
       objectFit: 'cover',
+      height: '100%',
+      width: '100%',
     }
   });

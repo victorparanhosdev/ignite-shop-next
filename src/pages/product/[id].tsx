@@ -10,6 +10,7 @@ import Stripe from "stripe";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { useState } from "react";
+import Head from "next/head";
 
 interface ProductProps {
   product: {
@@ -52,6 +53,9 @@ const [isLoading, setLoading] = useState(false)
 
   return (
     <>
+    <Head>
+      <title>{`${product.name} | Ignite Shop`}</title>
+    </Head>
       <ProductHome>
         <ImageContainer>
           <Image width={520} height={480} src={product.imageUrl} alt="" />
