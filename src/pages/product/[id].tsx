@@ -22,9 +22,8 @@ interface ProductProps {
     name: string;
     imageUrl: string;
     price: string;
-    description: string;
-    defaultPriceId: string;
-  };
+    description: string
+  }
 }
 
 export default function Product({ product }: ProductProps) {

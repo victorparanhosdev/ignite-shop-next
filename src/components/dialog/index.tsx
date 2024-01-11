@@ -19,6 +19,15 @@ export function DialogBox() {
 
     const { dataCart, setdataCart } = useCart()
     const [isLoading, setLoading] = useState(false)
+    console.log(dataCart)
+    const cart = dataCart.map(item =>{
+        return {
+            price: item.defaultPriceId,
+            quantity: item.quantity
+        }
+        
+    })
+
 
     const valorTotal = dataCart.reduce((acc: PropsState, product: ProductProps) => {
 
@@ -57,7 +66,7 @@ export function DialogBox() {
         try {
             setLoading(true)
             const response = await axios.post('/api/checkout', {
-                //priceId: product.defaultPriceId,
+                product: cart
             })
             const { checkoutUrl } = response.data
             window.location.href = checkoutUrl

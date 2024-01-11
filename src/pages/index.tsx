@@ -19,9 +19,6 @@ interface HomeProps {
   products: ProductProps[]
 }
 
-function handleAddCart2() {
-  
-}
 
 export default function Home({ products }: HomeProps) {
   const {dataCart, setdataCart} = useCart()
@@ -114,6 +111,7 @@ export const getStaticProps: GetStaticProps = async () => {
         style: "currency",
         currency: "BRL",
       }).format(price.unit_amount! / 100),
+      defaultPriceId: price.id,
     };
   });
 

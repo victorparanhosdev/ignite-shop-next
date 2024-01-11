@@ -6,7 +6,9 @@ export interface ProductProps {
     name: string;
     imageUrl: string;
     price: string;
-    quantity: number
+    quantity: number,
+    defaultPriceId: string,
+
 }
 
 
