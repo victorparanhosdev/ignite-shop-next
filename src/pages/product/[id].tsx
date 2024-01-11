@@ -9,10 +9,11 @@ import { stripe } from "@/lib/stripe";
 import Stripe from "stripe";
 import { useRouter } from "next/router";
 
-import { useState } from "react";
+
 import Head from "next/head";
 import { useCart } from "@/hooks/useCart";
 import { toast } from "react-toastify";
+import { Loading } from "@/components/loading";
 
 
 interface ProductProps {
@@ -29,7 +30,7 @@ interface ProductProps {
 export default function Product({ product }: ProductProps) {
   const {dataCart, setdataCart} = useCart()
 
-const [isLoading, setLoading] = useState(false)
+
 
   function handleAddProduct(){
 
@@ -61,7 +62,7 @@ const [isLoading, setLoading] = useState(false)
   const { isFallback } = useRouter();
 
   if (isFallback) {
-    return <h1>LOADING...</h1>;
+    return <Loading />;
   }
 
   return (
@@ -79,7 +80,7 @@ const [isLoading, setLoading] = useState(false)
           <span>{product.price}</span>
           <p>{product.description}</p>
 
-          <button disabled={isLoading} onClick={handleAddProduct}>Colocar na sacola</button>
+          <button onClick={handleAddProduct}>Colocar na sacola</button>
         </DetailsContainer>
       </ProductHome>
     </>

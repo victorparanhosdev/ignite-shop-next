@@ -1,4 +1,4 @@
-import { styled } from "..";
+import { styled } from "../../styles";
 
 export const HomeHeader = styled("header", {
     padding: '2rem 0',
@@ -24,6 +24,11 @@ export const HomeHeader = styled("header", {
         padding: '1.2rem',
         justifyContent: 'center',
         alignItems: 'center',
+        transition: 'filter 0.2s',
+
+        '&:hover': {
+            filter: 'brightness(1.2)'
+        },
 
         span: {
             position: 'absolute',

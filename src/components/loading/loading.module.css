@@ -1,0 +1,14 @@
+
+.loading {
+    display: flex;
+    justify-content: center;
+    padding: 10rem;
+    overflow: hidden;
+    width: 100vw;
+
+}
+
+.loading svg {
+    width: min(15rem, 20%);
+  
+}
