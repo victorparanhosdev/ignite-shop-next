@@ -38,7 +38,7 @@ export const Product= styled('div', {
         alignItems: 'center',
    
 
-        transform: 'translateY(0%)',
+        transform: 'translateY(120%)',
         transition: 'all 0.3s ease-in-out',
         opacity: 1,
         borderRadius: 6,
@@ -48,13 +48,14 @@ export const Product= styled('div', {
         strong: {
             fontSize: '2rem',
             display: 'block',
+            marginBottom: '0.4rem',
         },
 
         span: {
             color: '$green300',
             fontWeight: 'bold',
             fontSize: '2.4rem',
-            marginTop: '0.4rem',
+            
         },
         
         button: {

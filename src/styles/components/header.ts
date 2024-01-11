@@ -36,7 +36,7 @@ export const HomeHeader = styled("header", {
             right: '-1rem',
             borderRadius: '50%',
             background: '$green300',
-            border: '2px solid black',
+            border: '3px solid black',
             color: '$white',
             fontSize: '1.4rem',
             fontWeight: 'bold',
