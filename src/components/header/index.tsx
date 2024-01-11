@@ -1,11 +1,11 @@
-import LogoImg from '../../public/logo.svg'
+import LogoImg from '../../assets/logo.svg'
 import Image from 'next/image'
 import {Handbag } from '@phosphor-icons/react';
 import { HomeHeader } from '@/styles/components/header';
 import { useCart } from '@/hooks/useCart';
 import Link from 'next/link';
 import * as Dialog from '@radix-ui/react-dialog';
-import { DialogBox } from '@/dialog/dialog';
+import { DialogBox } from '@/components/dialog';
 
 
 export function Header() {
