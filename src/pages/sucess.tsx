@@ -65,7 +65,6 @@ export const getServerSideProps: GetServerSideProps = async ({query})=> {
 
   })
   
-  console.log(product)
   const productS = product.line_items!.data[0].price!.product as Stripe.Product
 
   return {

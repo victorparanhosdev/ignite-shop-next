@@ -38,21 +38,38 @@ export const Product= styled('div', {
         alignItems: 'center',
    
 
-        transform: 'translateY(110%)',
+        transform: 'translateY(0%)',
         transition: 'all 0.3s ease-in-out',
-        opacity: 0,
+        opacity: 1,
         borderRadius: 6,
         color: '$gray300',
        
 
         strong: {
-            fontSize: '2rem'
+            fontSize: '2rem',
+            display: 'block',
         },
 
         span: {
             color: '$green300',
             fontWeight: 'bold',
-            fontSize: '2.4rem'
+            fontSize: '2.4rem',
+            marginTop: '0.4rem',
+        },
+        
+        button: {
+            border: '0',
+            display: 'flex',
+            borderRadius: 6,
+            cursor: 'pointer',
+            background: '$green500',
+            color: '$white',
+            height: '5.6rem',
+            minWidth: '5.6rem',
+            padding: '1.2rem',
+            justifyContent: 'center',
+            alignItems: 'center',
+
         }
     },
 

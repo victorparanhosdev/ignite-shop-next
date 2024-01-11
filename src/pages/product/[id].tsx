@@ -8,9 +8,11 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { stripe } from "@/lib/stripe";
 import Stripe from "stripe";
 import { useRouter } from "next/router";
-import axios from "axios";
+import axios from 'axios'
 import { useState } from "react";
 import Head from "next/head";
+import { useCart } from "@/hooks/useCart";
+
 
 interface ProductProps {
   product: {
@@ -24,22 +26,30 @@ interface ProductProps {
 }
 
 export default function Product({ product }: ProductProps) {
+  const {dataCart, setdataCart} = useCart()
 
 const [isLoading, setLoading] = useState(false)
 
- async function handleBuyProduct(){
+  function handleAddProduct(){
 
-  try {
-    setLoading(true)
-    const response = await axios.post('/api/checkout', {
-      priceId: product.defaultPriceId,
-    })
-    const {checkoutUrl} = response.data
-    window.location.href = checkoutUrl
+  // try {
+  //   setLoading(true)
+  //   const response = await axios.post('/api/checkout', {
+  //     priceId: product.defaultPriceId,
+  //   })
+  //   const {checkoutUrl} = response.data
+  //   window.location.href = checkoutUrl
 
-  }catch(error) {
-    setLoading(false)
-    alert('Erro ao direcionar checkout!')
+  // }catch(error) {
+  //   setLoading(false)
+  //   alert('Erro ao direcionar checkout!')
+  // }
+  const isItemArray = dataCart.find(item => item === product.id)
+
+  if(isItemArray) {
+    alert('Item já adicionado no carrinho')
+  }else {
+    setdataCart(prevState => [product.id, ...prevState])
   }
 
     
@@ -66,7 +76,7 @@ const [isLoading, setLoading] = useState(false)
           <span>{product.price}</span>
           <p>{product.description}</p>
 
-          <button disabled={isLoading} onClick={handleBuyProduct}>Comprar agora</button>
+          <button disabled={isLoading} onClick={handleAddProduct}>Colocar na sacola</button>
         </DetailsContainer>
       </ProductHome>
     </>

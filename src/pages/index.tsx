@@ -4,11 +4,13 @@ import "keen-slider/keen-slider.min.css";
 
 import { HomeContainer, Product } from "@/styles/pages/home";
 import Image from "next/image";
-
+import { useCart } from "@/hooks/useCart";
 import { stripe } from "@/lib/stripe";
 import Stripe from "stripe";
 import Link from "next/link";
 import Head from "next/head";
+import { Handbag } from "@phosphor-icons/react";
+import { MouseEvent } from "react";
 
 interface HomeProps {
   products: {
@@ -20,12 +22,31 @@ interface HomeProps {
 }
 
 export default function Home({ products }: HomeProps) {
+  const {dataCart, setdataCart} = useCart()
+
+
   const [slideRef] = useKeenSlider({
     slides: {
       perView: 3,
       spacing: 48,
     },
   });
+
+  function handleAddCart(event: MouseEvent<HTMLButtonElement>, value: string){
+    event.preventDefault()
+    event.stopPropagation();
+
+    const isItemArray = dataCart.find(item => item === value)
+
+    if(isItemArray) {
+      alert('Item já adicionado no carrinho')
+    }else {
+      setdataCart(prevState => [value, ...prevState])
+    }
+
+   
+
+  }
 
   return (
 
@@ -48,8 +69,11 @@ export default function Home({ products }: HomeProps) {
                 priority
               />
               <footer>
+                <div>
                 <strong>{product.name}</strong>
                 <span>{product.price}</span>
+                </div>
+                <button type="button" onClick={(e)=> handleAddCart(e, product.id)}><Handbag weight='bold' size={32} /></button>
               </footer>
             </Product>
           </Link>

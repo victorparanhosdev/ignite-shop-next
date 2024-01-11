@@ -10,8 +10,3 @@ export const AppContainer = styled("div", {
 
 })
 
-export const Header = styled("header", {
-    padding: '2rem 0',
-    width: 'min(100%, 118rem)',
-    margin: '0 auto 3.2rem',
-})

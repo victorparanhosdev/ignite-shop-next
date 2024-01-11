@@ -1,0 +1,59 @@
+.DialogOverlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    inset: 0;
+    animation: overlayShow 150ms ease-in-out;
+}
+.DialogContent {
+    background-color: #202024;   
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: min(100%, 48rem);
+    height: 100vh;
+    padding: 7.2rem 4.8rem;
+    animation: contentShow 0.3s;
+}
+
+@keyframes contentShow {
+    from {
+ 
+      transform: translateX(150%);
+    }
+    to {
+
+      transform: translate(0%);
+    }
+  }
+
+
+
+
+
+
+
+.IconButton {
+    position: absolute;
+    top: 2.4rem;
+    right: 2.4rem;
+    border: 0;
+    background: transparent;
+    color: #8D8D99;
+    cursor: pointer;
+}
+
+
+.ContainerMenu {
+    background-color: gray;
+}
+
+
+@keyframes overlayShow {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
