@@ -11,14 +11,16 @@ import Link from "next/link";
 import Head from "next/head";
 import { Handbag } from "@phosphor-icons/react";
 import { MouseEvent } from "react";
+import {toast } from 'react-toastify';
+
+import { ProductProps } from "@/hooks/useCart";
 
 interface HomeProps {
-  products: {
-    id: string;
-    name: string;
-    imageUrl: string;
-    price: string;
-  }[];
+  products: ProductProps[]
+}
+
+function handleAddCart2() {
+  
 }
 
 export default function Home({ products }: HomeProps) {
@@ -32,17 +34,29 @@ export default function Home({ products }: HomeProps) {
     },
   });
 
-  function handleAddCart(event: MouseEvent<HTMLButtonElement>, value: string){
+function handleAddCart(event: MouseEvent<HTMLButtonElement>, product: ProductProps){
     event.preventDefault()
     event.stopPropagation();
 
-    const isItemArray = dataCart.find(item => item === value)
+    const isProductInCart = dataCart.some(item => item.id === product.id);
 
-    if(isItemArray) {
-      alert('Item já adicionado no carrinho')
-    }else {
-      setdataCart(prevState => [value, ...prevState])
+    if (!isProductInCart) {
+      setdataCart(prevState => [{...product, quantity: 1}, ...prevState]);
+    } else {
+      setdataCart(prevState => prevState.map(data => {
+        if(data.id === product.id){
+          return {...data, quantity: data.quantity + 1}
+        }
+
+        return data
+      }));
     }
+
+    toast.success(`${product.name} adicionado(a)`, {
+      theme: 'dark',
+      autoClose: 500,
+      pauseOnHover: false,
+    })
 
    
 
@@ -73,7 +87,7 @@ export default function Home({ products }: HomeProps) {
                 <strong>{product.name}</strong>
                 <span>{product.price}</span>
                 </div>
-                <button type="button" onClick={(e)=> handleAddCart(e, product.id)}><Handbag weight='bold' size={32} /></button>
+                <button type="button" onClick={(e)=> handleAddCart(e, product)}><Handbag weight='bold' size={32} /></button>
               </footer>
             </Product>
           </Link>

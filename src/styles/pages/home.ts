@@ -71,6 +71,11 @@ export const Product= styled('div', {
             justifyContent: 'center',
             alignItems: 'center',
 
+            '&:hover': {
+                transition: 'background 0.2s',
+                background: '$green300'
+            },
+
         }
     },
 

@@ -4,8 +4,9 @@ import { globalStyles } from '@/styles/global'
 import { Header } from '@/components/header'
 import { AppContainer} from '@/styles/pages/app'
 import * as Dialog from '@radix-ui/react-dialog'
-
+import { ToastContainer } from 'react-toastify';
 import {CartProvider} from '../hooks/useCart'
+import 'react-toastify/dist/ReactToastify.css';
 globalStyles()
 
 
@@ -24,7 +25,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Header />
 
       <Component {...pageProps} />
-
+      <ToastContainer />
     </AppContainer>
     </CartProvider>
     </Dialog.Root>

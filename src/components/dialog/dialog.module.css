@@ -17,6 +17,7 @@
     
 }
 
+
 @keyframes contentShow {
     from {
       opacity: 0;
@@ -51,9 +52,92 @@
 
 
 .ContainerMenu {
-    background-color: gray;
+  
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.DialogTitle {
+  color: rgba(225, 225, 230, 1);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 3.2rem;
+}
+.SelectCard {
+  display: grid;
+  gap: 2.4rem;
+}
+.CardItem {
+  display: flex;
+  gap: 2rem;
 }
 
+.CardInfo {
+
+}
+
+.cardTitle h1{
+  font-size: 1.8rem;
+  color: #C4C4CC;
+  font-weight: normal;
+  line-height: 160%;
+  margin-bottom: 0.2rem;
+}
+.cardTitle strong {
+  color: #E1E1E6;
+  font-size: 1.8rem;
+  line-height: 160%;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+.cardTitle strong span {
+  color: #00875F;
+  font-size: 1.4rem;
+}
+.cardTitle button {
+  border: 0;
+  background: 0;
+  color: #00875F;
+  font-weight: bold;
+  transition: color 0.3s;
+  cursor: pointer;
+
+}
+.cardTitle button:hover {
+  color: #00b37e;
+}
+
+.CardImg {
+  border-radius: 8px;
+  height: 9.3rem;
+  width: 10rem;
+  overflow: hidden;
+  background: linear-gradient(180deg, #1ea483 0%, #7465d4 100%);
+}
+
+.CardImg img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.ButtonFinish {
+  background-color: #00875F;
+  padding: 2rem 3.2rem;
+  margin-top: auto;
+  border-radius: 0.8rem;
+  height: 6.9rem;
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  border: 0;
+  font-weight: 700;
+  line-height: 160%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.ButtonFinish:hover {
+  background: #00b37e;
+}
 
 @keyframes overlayShow {
     from {

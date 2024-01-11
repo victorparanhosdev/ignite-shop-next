@@ -8,10 +8,11 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { stripe } from "@/lib/stripe";
 import Stripe from "stripe";
 import { useRouter } from "next/router";
-import axios from 'axios'
+
 import { useState } from "react";
 import Head from "next/head";
 import { useCart } from "@/hooks/useCart";
+import { toast } from "react-toastify";
 
 
 interface ProductProps {
@@ -32,25 +33,27 @@ const [isLoading, setLoading] = useState(false)
 
   function handleAddProduct(){
 
-  // try {
-  //   setLoading(true)
-  //   const response = await axios.post('/api/checkout', {
-  //     priceId: product.defaultPriceId,
-  //   })
-  //   const {checkoutUrl} = response.data
-  //   window.location.href = checkoutUrl
 
-  // }catch(error) {
-  //   setLoading(false)
-  //   alert('Erro ao direcionar checkout!')
-  // }
-  const isItemArray = dataCart.find(item => item === product.id)
+  const isProductInCart = dataCart.some(item => item.id === product.id);
 
-  if(isItemArray) {
-    alert('Item já adicionado no carrinho')
-  }else {
-    setdataCart(prevState => [product.id, ...prevState])
+  if (!isProductInCart) {
+    setdataCart(prevState => [{...product, quantity: 1}, ...prevState]);
+  } else {
+    setdataCart(prevState => prevState.map(data => {
+      if(data.id === product.id){
+        return {...data, quantity: data.quantity + 1}
+      }
+
+      return data
+    }));
   }
+
+  toast.success(`${product.name} adicionado(a)`, {
+    theme: 'dark',
+    autoClose: 500,
+    pauseOnHover: false,
+  })
+
 
     
 
