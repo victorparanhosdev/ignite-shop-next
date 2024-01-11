@@ -22,8 +22,8 @@ export const globalStyles = globalCss({
         fontFamily: 'Roboto',
         fontWeight: 400,
         fontSize: '1.6rem',
-      }
-
+      },
+      
 
 })
 

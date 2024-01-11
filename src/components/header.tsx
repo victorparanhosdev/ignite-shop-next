@@ -1,4 +1,4 @@
-import LogoImg from '../../public/assets/Logo.svg'
+import LogoImg from '../../public/logo.svg'
 import Image from 'next/image'
 import {Handbag } from '@phosphor-icons/react';
 import { HomeHeader } from '@/styles/components/header';

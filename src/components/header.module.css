@@ -4,6 +4,7 @@
     inset: 0;
     animation: overlayShow 150ms ease-in-out;
 }
+
 .DialogContent {
     background-color: #202024;   
     position: absolute;
@@ -13,15 +14,16 @@
     height: 100vh;
     padding: 7.2rem 4.8rem;
     animation: contentShow 0.3s;
+    
 }
 
 @keyframes contentShow {
     from {
- 
+      opacity: 0;
       transform: translateX(150%);
     }
     to {
-
+      opacity: 1;
       transform: translate(0%);
     }
   }
@@ -40,6 +42,17 @@
     background: transparent;
     color: #8D8D99;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.IconButton svg {
+  transition: transform 0.3s;
+}
+.IconButton:hover svg{
+  transition: transform 0.3s;
+  transform: scale(1.2);
 }
 
 
