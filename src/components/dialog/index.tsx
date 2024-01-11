@@ -19,7 +19,7 @@ export function DialogBox() {
 
     const { dataCart, setdataCart } = useCart()
     const [isLoading, setLoading] = useState(false)
-    console.log(dataCart)
+
     const cart = dataCart.map(item =>{
         return {
             price: item.defaultPriceId,
