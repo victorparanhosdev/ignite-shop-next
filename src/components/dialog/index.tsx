@@ -13,7 +13,7 @@ interface PropsState {
     QuantityItem: number;
     Total: number;
 }
-
+ 
 export function DialogBox() {
 
 
