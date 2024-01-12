@@ -6,7 +6,7 @@ import axios from "axios";
 import { useCart } from "@/hooks/useCart";
 import Image from "next/image";
 import { ProductProps } from "@/hooks/useCart";
-import EmptyCart from '../../assets/emptycart.svg'
+import {SmileyXEyes} from '@phosphor-icons/react'
 import { toast } from "react-toastify";
 
 interface PropsState {
@@ -109,7 +109,7 @@ export function DialogBox() {
                                 )
                             }) : <div className={styled.CartEmpty}>
 
-                                <div><Image src={EmptyCart} alt="" /></div>
+                                <div><SmileyXEyes size={200} /></div>
                                 <h1>Não há itens no seu carinho de compras</h1>
 
 

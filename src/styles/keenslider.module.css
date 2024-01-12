@@ -1,0 +1,27 @@
+.navigationwrapper {
+  position: relative;
+}
+
+.arrow {
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  fill: #fff;
+  cursor: pointer;
+}
+
+.arrowleft {
+  left: 5px;
+}
+
+.arrowright {
+  left: auto;
+  right: 5px;
+}
+
+.arrowdisabled {
+  fill: rgba(255, 255, 255, 0.5);
+}

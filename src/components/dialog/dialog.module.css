@@ -168,13 +168,17 @@ cursor: not-allowed;
 
 .CartEmpty h1{
   font-size: 2rem;
-  color: rgb(161, 42, 42);
+  color: #00875F;
+  margin-block: 1.5rem;
 }
-.CartEmpty div img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  margin: 2rem auto 4rem;
+.CartEmpty div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.CartEmpty div svg{
+  color:#00875F;
+  
 }
 
 @keyframes overlayShow {

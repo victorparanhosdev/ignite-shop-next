@@ -1,8 +1,9 @@
+
 import { styled } from '..';
 
 export const HomeContainer= styled('main', {
 
-    minHeight: '65.6rem',
+    minHeight: '45.6rem',
     maxWidth: 'calc(100vw - ((100vw - 118rem)/2))',
     marginLeft: 'auto',
 

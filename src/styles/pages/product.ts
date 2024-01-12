@@ -5,13 +5,19 @@ export const ProductHome = styled('div', {
     display: 'flex',
     gap: '7.2rem',
     maxWidth: '118rem',
-    width: '100%',
+    width: '95%',
     margin: '0 auto',
+    '@media (max-width: 900px)': {
+        display: 'flex',
+        flexDirection: 'column',
+        padding: '1rem',
+        width: '100%',
+      },
 })
 
 export const ImageContainer = styled('div', {
     background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
-    minHeight: '65.6rem',
+  
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -44,6 +50,7 @@ export const DetailsContainer = styled('div', {
         color: '$gray300',
         lineHeight: '160%',
         textAlign: 'justify',
+        marginBottom: '1.5rem'
 
     },
 
