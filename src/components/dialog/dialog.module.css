@@ -1,15 +1,10 @@
-.DialogOverlay {
-    background-color: rgba(0, 0, 0, 0.6);
-    position: fixed;
-    inset: 0;
-    animation: overlayShow 150ms ease-in-out;
-}
 
 .DialogContent {
     background-color: #202024;   
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
+    bottom:0,
     width: min(100%, 48rem);
     height: 100vh;
 
