@@ -64,8 +64,14 @@
   margin-bottom: 3.2rem;
 }
 .SelectCard {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 2.4rem;
+  min-height: 37rem;
+  overflow-y: auto;
+  padding: 1rem;
+  padding-left: 0;
+  margin-block: 1rem;
 }
 .CardItem {
   display: flex;

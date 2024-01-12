@@ -24,6 +24,21 @@ export const globalStyles = globalCss({
         fontSize: '1.6rem',
       },
       
+      '&::-webkit-scrollbar-thumb': {
+        background: '$green500',
+        borderRadius: '5rem',
+        transition: 'background 0.3s',
+        '&:hover':{
+          background:'$green300',
+        }
+      },
+    
+      '&::-webkit-scrollbar': {
+        background: 'transparent',
+        width: '0.7rem',
+        height: '0.7rem',
+      },
+      
 
 })
 
