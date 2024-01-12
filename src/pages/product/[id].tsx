@@ -90,7 +90,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
       }
     }
   })
-  console.log(arrayList)
+
 
   return {
     paths: arrayList,
