@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import {ImageContainer, SuccessContainer} from '../styles/pages/sucess'
+import {ImageContainer, SuccessContainer, CheckoutBox} from '../styles/pages/sucess'
 import Link from 'next/link'
 import { GetServerSideProps } from 'next'
 import { stripe } from '@/lib/stripe'
@@ -28,9 +28,18 @@ export default function Sucess({product}: SucessProps) {
       <SuccessContainer>
       <h1>Compra efetuada</h1>
 
+
+      <CheckoutBox>
       <ImageContainer>
         <Image width={520} height={480} src={product.imageUrl} alt="" />
       </ImageContainer>
+      <ImageContainer>
+        <Image width={520} height={480} src={product.imageUrl} alt="" />
+      </ImageContainer>
+      <ImageContainer>
+        <Image width={520} height={480} src={product.imageUrl} alt="" />
+      </ImageContainer>
+      </CheckoutBox>
 
       <p>
         Uhuul <strong>{firstName}</strong>, sua <strong>{product.item}</strong> já está a caminho da sua casa.
@@ -60,7 +69,7 @@ export const getServerSideProps: GetServerSideProps = async ({query})=> {
   const sessionId = String(query.session_id)
 
 
-  const product = await stripe.checkout.sessions.retrieve(sessionId, {
+  const product = await stripe.checkout.sessions.retrieve('cs_test_b1q1tLJFsSgjSy4Pkw65pm6iR5sWTeBqRbPy8V86IvhF6bGUxlF9odTRfd', {
     expand: ['line_items', 'line_items.data.price.product'],
 
   })

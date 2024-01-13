@@ -38,13 +38,14 @@ export const SuccessContainer = styled('main', {
   });
 
 export const ImageContainer = styled('div', {
-    width: '100%',
-    maxWidth: '13rem',
-    minHeight: '14.5rem',
+    
+    width: '14rem',
+    minHeight: '14rem',
     background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
-    borderRadius: 8,
+    borderRadius: '50%',
     padding: '1rem',
-    marginTop: '6.4rem',
+    boxShadow: '0px 0px 10px rgb(0, 0, 0, 0.8)',
+
   
     display: 'flex',
     alignItems: 'center',
@@ -57,3 +58,14 @@ export const ImageContainer = styled('div', {
       width: '100%',
     }
   });
+
+export const CheckoutBox = styled('div', {
+  marginTop: '6.4rem',
+  display: 'grid',
+  gridAutoFlow: 'column',
+
+
+  'div + div': {
+    marginLeft: '-5rem'
+  }
+})
