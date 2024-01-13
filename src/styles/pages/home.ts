@@ -18,7 +18,7 @@ export const Product= styled('div', {
     alignItems: 'center',
     justifyContent: 'center',
     overflow: 'hidden',
-
+    zIndex: 0,
 
 
     img: {
@@ -37,7 +37,7 @@ export const Product= styled('div', {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-   
+        zIndex: 1,
 
         transform: 'translateY(120%)',
         transition: 'all 0.3s ease-in-out',

@@ -1,7 +1,7 @@
 import { styled } from "../../styles";
 
 export const HomeHeader = styled("header", {
-    padding: '2rem 0',
+    padding: '2rem 1rem',
     width: 'min(95%, 118rem)',
     margin: '0 auto 3.2rem',
     display: 'flex',

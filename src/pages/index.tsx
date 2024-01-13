@@ -56,7 +56,7 @@ export default function Home({ products }: HomeProps) {
 
 function handleAddCart(event: MouseEvent<HTMLButtonElement>, product: ProductProps){
     event.preventDefault()
-    event.stopPropagation();
+
 
     const isProductInCart = dataCart.some(item => item.id === product.id);
 
@@ -92,8 +92,9 @@ function handleAddCart(event: MouseEvent<HTMLButtonElement>, product: ProductPro
     <HomeContainer ref={slideRef} className={`${styled.navigationwrapper} keen-slider`}>    
       {products.map((product) => {
         return (   
-          <Link href={`/product/${product.id}`} key={product.id} prefetch={false}>
-            <Product className="keen-slider__slide number-slide1">
+       
+            <Product key={product.id} className="keen-slider__slide">
+              <Link href={`/product/${product.id}`}  prefetch={false}>
               <Image
                 width={520}
                 height={480}
@@ -101,6 +102,7 @@ function handleAddCart(event: MouseEvent<HTMLButtonElement>, product: ProductPro
                 alt=""
                 priority
               />
+              </Link>
               <footer>
                 <div>
                 <strong>{product.name}</strong>
@@ -109,7 +111,7 @@ function handleAddCart(event: MouseEvent<HTMLButtonElement>, product: ProductPro
                 <button type="button" onClick={(e)=> handleAddCart(e, product)}><Handbag weight='bold' size={32} /></button>
               </footer>
             </Product>
-          </Link>
+         
         );
       })}
        {loaded && instanceRef.current && (

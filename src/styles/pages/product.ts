@@ -23,11 +23,15 @@ export const ImageContainer = styled('div', {
     justifyContent: 'center',
     borderRadius: 8,
 
-    img: {
-        width: '100%',
-        height: '100%',
-    },
+    '@media (max-width: 530px)': {
+        img: {
+            height: '100%',
+            width: '100%',
+        },
+    
+    }
 
+ 
 })
 
 export const DetailsContainer = styled('div', {
