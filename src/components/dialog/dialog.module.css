@@ -11,6 +11,7 @@
 
 .DialogContent[data-state="open"] {
   animation: contentShow 0.4s;
+  z-index: 10;
 }
 
 .DialogContent[data-state="closed"] {
