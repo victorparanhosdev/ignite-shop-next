@@ -16,13 +16,12 @@
   bottom: 0;
   width: min(100%, 48rem);
   height: 100vh;
-  overflow: auto;
   z-index: 3;
 }
 
 .DialogContent[data-state="open"] {
   animation: contentShow 0.4s;
-  z-index: 10;
+
 }
 
 .DialogContent[data-state="closed"] {
@@ -76,6 +75,8 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  overflow: auto;
+  margin-bottom: 2rem;
 }
 .DialogTitle {
   color: rgba(225, 225, 230, 1);
