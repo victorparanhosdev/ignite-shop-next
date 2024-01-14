@@ -1,3 +1,13 @@
+.DialogOverlay {
+  background-color: rgba(0,0,0,0.6);
+  inset: 0;
+  position: fixed;
+  z-index: 2;
+  overflow: hidden;
+  
+}
+
+
 .DialogContent {
   background-color: #202024;
   position: fixed;
@@ -7,6 +17,7 @@
   width: min(100%, 48rem);
   height: 100vh;
   overflow: auto;
+  z-index: 3;
 }
 
 .DialogContent[data-state="open"] {
