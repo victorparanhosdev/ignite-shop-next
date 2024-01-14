@@ -10,16 +10,17 @@ import { stripe } from "@/lib/stripe";
 import Stripe from "stripe";
 import Image from "next/image";
 
-interface SucessProps {
+interface SuccessProps {
+  costumerName: string
   products: {
-    name: string;
-    imgUrl: string[];
-    quantity: number;
-  };
+    id: string
+    name: string
+    imageUrl: string
+  }[]
 }
 
-export default function Sucess({ products }: SucessProps) {
-
+export default function Sucess({ costumerName, products }: SuccessProps) {
+  const productsAmount = products.length
   return (
     <>
       <Head>
@@ -30,19 +31,19 @@ export default function Sucess({ products }: SucessProps) {
         <h1>Compra efetuada</h1>
 
         <CheckoutBox>
-          {products.imgUrl.map((itemImg, index) => {
+          {products.map((itemImg) => {
             return (
-              <ImageContainer key={index}>
-                <Image width={520} height={480} src={itemImg} alt="" />
+              <ImageContainer key={itemImg.id}>
+                <Image width={520} height={480} src={itemImg.imageUrl} alt="" />
               </ImageContainer>
             );
           })}
         </CheckoutBox>
 
         <p>
-          Uhuul <strong>{products.name}</strong>, sua compra de{" "}
-          <strong>{products.quantity}</strong>{" "}
-          {products.quantity > 1 ? "camisas" : "camisa"} já está a caminho da
+          Uhuul <strong>{costumerName}</strong>, sua compra de{" "}
+          <strong>{productsAmount}</strong>{" "}
+          {productsAmount > 1 ? "camisas" : "camisa"} já está a caminho da
           sua casa.
         </p>
 
@@ -56,39 +57,33 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   if (!query.session_id) {
     return {
       redirect: {
-        destination: "/",
+        destination: '/',
         permanent: false,
       },
-    };
+    }
   }
 
-  const sessionId = String(query.session_id);
+  const sessionId = String(query.session_id)
 
-  const product = await stripe.checkout.sessions.retrieve(
-    sessionId,
-    {
-      expand: ["line_items", "line_items.data.price.product"],
+  const session = await stripe.checkout.sessions.retrieve(sessionId, {
+    expand: ['line_items', 'line_items.data.price.product'],
+  })
+
+  const costumerName = session.customer_details!.name
+  const products = session.line_items!.data.map((item) => {
+    const product = item.price!.product as Stripe.Product
+
+    return {
+      id: product.id,
+      name: product.name,
+      imageUrl: product.images[0],
     }
-  );
-  //console.log(product)
-  const ArrayData = product.line_items!.data.map((itens) => {
-    const price = itens.price as Stripe.Price;
-    const product = price.product as Stripe.Product;
-
-    return { ...product.images };
-  });
-
-  const quantity = product
-    .line_items!.data.map((item) => Object.assign({}, item)) // Cria cópias seguras dos objetos
-    .reduce((acc, item) => acc + (item.quantity || 0), 0);
+  })
 
   return {
     props: {
-      products: {
-        name: product.customer_details!.name,
-        imgUrl: ArrayData.map((img) => img[0]),
-        quantity: quantity,
-      },
+      costumerName,
+      products,
     },
-  };
-};
+  }
+}
