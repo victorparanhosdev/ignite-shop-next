@@ -80,6 +80,7 @@ export function DialogBox() {
 
     return (
         <Dialog.Portal>
+            
             <Dialog.Content className={styled.DialogContent}>
                 <Dialog.Close asChild>
                     <button className={styled.IconButton} aria-label="Close">
