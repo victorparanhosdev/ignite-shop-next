@@ -7,7 +7,7 @@
   width: min(100%, 48rem);
   height: 100vh;
   overflow: auto;
-  z-index: 999;
+  z-index: 999 !important;
 }
 
 .DialogContent[data-state="open"] {
