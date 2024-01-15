@@ -7,11 +7,7 @@ export const HomeContainer= styled('main', {
     maxWidth: 'calc(100vw - ((100vw - 118rem)/2))',
     marginLeft: 'auto',
 
-    '@media (max-width:500px)': {
-
-        minHeight: 'auto',
-        
-    }
+   
 
 })
 
