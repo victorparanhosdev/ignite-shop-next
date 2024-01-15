@@ -1,6 +1,12 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { stripe } from '../../lib/stripe';
 
+import { redirect } from 'next/navigation';
+ 
+export async function GET(request: Request) {
+  redirect('https://nextjs.org/');
+}
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   
   const {product} = req.body
