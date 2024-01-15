@@ -11,8 +11,8 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/c/pay/:path*',
-        destination: 'https://ignite-shop-next-theta.vercel.app/success/:path*',
+        source: '/c/pay/',
+        destination: '/src/pages/success.tsx',
         permanent: true,
       },
     ];
