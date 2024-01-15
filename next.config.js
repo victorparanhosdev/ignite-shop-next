@@ -8,8 +8,15 @@ const nextConfig = {
     ],
     
   },
-
-
+  async redirects() {
+    return [
+      {
+        source: '/c/pay/:path*',
+        destination: 'https://ignite-shop-next-theta.vercel.app/success/:path*',
+        permanent: true,
+      },
+    ];
+  },
  
 }
 
