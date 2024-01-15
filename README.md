@@ -54,7 +54,7 @@ Na data da validade utilize qualquer data futura.
 
 Nos demais dados, utilize as informações que desejar.
 
-
+----
 
 [Deploy Ignite Shop](https://ignite-shop-next-theta.vercel.app/)
 
