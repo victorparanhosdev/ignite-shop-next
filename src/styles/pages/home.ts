@@ -3,7 +3,7 @@ import { styled } from '..';
 
 export const HomeContainer= styled('main', {
 
-    minHeight: '45.6rem',
+    minHeight: '65.6rem',
     maxWidth: 'calc(100vw - ((100vw - 118rem)/2))',
     marginLeft: 'auto',
 
@@ -20,11 +20,7 @@ export const Product= styled('div', {
     overflow: 'hidden',
     zIndex: 0,
 
-
-    img: {
-        objectFit: 'cover',
-        height: 'auto'
-    },
+ 
 
 
     footer: {

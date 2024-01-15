@@ -86,8 +86,8 @@
   gap: 2.4rem;
   min-height: 30rem;
   overflow-y: auto;
-  padding: 1rem;
-  padding-left: 0;
+
+
   margin-block: 1rem;
 }
 .CardItem {
@@ -96,7 +96,7 @@
 }
 
 .CardInfo {
-  margin-top: auto;
+  margin-top: 3.2rem;
 }
 
 .CardInfo div:first-child {
@@ -187,6 +187,7 @@
   font-size: 2rem;
   color: #00875f;
   margin-block: 1.5rem;
+  text-align: center;
 }
 .CartEmpty div {
   display: flex;

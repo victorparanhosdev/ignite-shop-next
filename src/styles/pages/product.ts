@@ -7,26 +7,42 @@ export const ProductHome = styled('div', {
     maxWidth: '118rem',
     width: '95%',
     margin: '0 auto',
+
+    '@media (max-width: 1000px)': {
+        gap: '3rem'
+    },
+    
+
     '@media (max-width: 900px)': {
-        display: 'flex',
-        flexDirection: 'column',
-        padding: '1rem',
-        width: '100%',
-      },
+        display: 'grid'
+    },
+    
+ 
 })
 
 export const ImageContainer = styled('div', {
     background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
-  
+    height: '65.6rem',
+    minWidth: '57.6rem',
+    width: '100%',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 8,
 
-    '@media (max-width: 530px)': {
+    '@media (max-width:1130px)': {
+        minWidth: 'auto',
+    },
+
+    '@media (max-width: 900px)': {
+        height: 'auto',
+    
+    },
+    '@media (max-width: 600px)': {
         img: {
-            height: '100%',
             width: '100%',
+            height: '100%',
+            objectFit: 'cover'
         },
     
     }
@@ -38,6 +54,7 @@ export const DetailsContainer = styled('div', {
 
     display: 'flex',
     flexDirection: 'column',
+ 
     
     h1: {
         fontSize: '3.2rem',
