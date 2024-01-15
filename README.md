@@ -2,7 +2,7 @@
   <h1 align="center"><a href="https://ignite-shop-next-theta.vercel.app/">Ignite Shop :rocket: </a></h1>
 </p>
 
-Este é o resultado de um estudo aprofundado de React.js, realizado no treinamento Ignite, da Rocketseat.
+Este é o resultado de um estudo aprofundado de React.js com framework Next.js, realizado no treinamento Ignite, da Rocketseat.
 
 
 
