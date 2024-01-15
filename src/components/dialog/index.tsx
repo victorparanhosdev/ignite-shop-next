@@ -16,7 +16,7 @@ interface PropsState {
 }
  
 export function DialogBox() {
-    const router = useRouter()
+
 
     const { dataCart, setdataCart } = useCart()
     const [isLoading, setLoading] = useState(false)
