@@ -8,6 +8,7 @@ import Image from "next/image";
 import { ProductProps } from "@/hooks/useCart";
 import {SmileyXEyes} from '@phosphor-icons/react'
 import { toast } from "react-toastify";
+import { useRouter } from "next/router";
 
 interface PropsState {
     QuantityItem: number;
@@ -15,7 +16,7 @@ interface PropsState {
 }
  
 export function DialogBox() {
-
+    const router = useRouter()
 
     const { dataCart, setdataCart } = useCart()
     const [isLoading, setLoading] = useState(false)
@@ -69,7 +70,8 @@ export function DialogBox() {
                 product: cart
             })
             const { checkoutUrl } = response.data
-            window.location.href = checkoutUrl
+            router.push(checkoutUrl)
+            //window.location.href = checkoutUrl
 
         } catch (error) {
             setLoading(false)
