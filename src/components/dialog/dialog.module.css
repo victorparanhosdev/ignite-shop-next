@@ -72,7 +72,9 @@
   padding: 7.2rem 4.8rem;
   display: flex;
   flex-direction: column;
+  height: 100%;
   margin-bottom: 2rem;
+  overflow: auto;
 }
 .DialogTitle {
   color: rgba(225, 225, 230, 1);
@@ -84,8 +86,7 @@
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
-  min-height: 30rem;
-  overflow-y: auto;
+
 
 
   margin-block: 1rem;
@@ -173,6 +174,7 @@
   line-height: 160%;
   cursor: pointer;
   transition: background 0.3s;
+  width: 100%;
 }
 .ButtonFinish:not(:disabled):hover {
   background: #00b37e;

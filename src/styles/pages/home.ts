@@ -7,6 +7,12 @@ export const HomeContainer= styled('main', {
     maxWidth: 'calc(100vw - ((100vw - 118rem)/2))',
     marginLeft: 'auto',
 
+    '@media (max-width:500px)': {
+
+        minHeight: 'auto',
+        
+    }
+
 })
 
 export const Product= styled('div', {
@@ -20,7 +26,13 @@ export const Product= styled('div', {
     overflow: 'hidden',
     zIndex: 0,
 
- 
+    '@media (max-width:500px)': {
+        img: {
+            width: '100%',
+            objectFit: 'cover'
+        }
+        
+    },
 
 
     footer: {

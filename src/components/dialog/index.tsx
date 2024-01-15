@@ -119,6 +119,8 @@ export function DialogBox() {
 
                     </div>
 
+                        <div style={{marginTop: 'auto'}}>
+
                     <div className={styled.CardInfo}>
                         <div>
                             <span>Quantidade</span>
@@ -130,8 +132,9 @@ export function DialogBox() {
                         </div>
                     </div>
 
-
                     <button disabled={dataCart.length === 0 || isLoading} onClick={handleFinishCart} className={styled.ButtonFinish} type="button">Finalizar compra</button>
+                        </div>
+
 
                 </div>
             </Dialog.Content>
