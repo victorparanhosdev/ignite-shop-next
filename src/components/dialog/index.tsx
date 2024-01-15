@@ -76,7 +76,7 @@ export function DialogBox() {
         } catch (error) {
             setLoading(false)
             console.log(error)
-            console.log(error.response.data)
+            console.log((error as any).response.data)
             alert('Erro ao direcionar checkout!')
         }
     }
