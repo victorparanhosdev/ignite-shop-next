@@ -11,8 +11,8 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/c/pay/',
-        destination: '/src/pages/success.tsx',
+        source: '/',
+        destination: '/success',
         permanent: true,
       },
     ];
