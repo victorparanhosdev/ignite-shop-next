@@ -1,0 +1,11 @@
+{
+    "rewrites": [
+      {
+        "source": "/sucess",
+        "destination": "https://ignite-shop-next-theta.vercel.app/sucess",
+        "has": [
+          { "type": "query", "key": "session_id", "value": "(.*)" }
+        ]
+      }
+    ]
+  }
