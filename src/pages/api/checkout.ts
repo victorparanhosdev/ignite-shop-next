@@ -24,8 +24,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const cancelUrl = `${process.env.NEXT_URL}/`;
 
   const checkoutSession = await stripe.checkout.sessions.create({
-    //success_url: successUrl,
-    return_url:successUrl,
+    success_url: successUrl,
     cancel_url: cancelUrl,
     mode: 'payment',
     line_items: product
