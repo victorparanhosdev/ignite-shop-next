@@ -24,18 +24,7 @@ export const Product= styled('div', {
     justifyContent: 'center',
     overflow: 'hidden',
     zIndex: 0,
-    img: {
-        
-        objectFit: 'cover'
-    },
-
-    '@media (max-width:500px)': {
-        img: {
-            width: '100%',
-            height: '100%',
-        }
-        
-    },
+    
 
 
     footer: {
