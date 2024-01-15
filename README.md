@@ -1,13 +1,6 @@
 <p align="center">
-  <h1 align="center"><a href="https://ignit3-shop.netlify.app/">Ignite Shop :rocket: </a></h1>
+  <h1 align="center"><a href="https://ignite-shop-next-theta.vercel.app/">Ignite Shop :rocket: </a></h1>
 </p>
-
-<p align="center" margin-top="25px" >
-  <img alt="GitHub Language Count" src="https://img.shields.io/github/languages/count/andreviapiana/ignite-shop" />
-
-  <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/andreviapiana/ignite-shop" />
-</p>
-
 
 Este é o resultado de um estudo aprofundado de React.js, realizado no treinamento Ignite, da Rocketseat.
 
