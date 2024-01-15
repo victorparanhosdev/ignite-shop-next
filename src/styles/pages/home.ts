@@ -8,7 +8,7 @@ export const HomeContainer= styled('main', {
     marginLeft: 'auto',
 
     '@media (max-width:500px)': {
-        minHeight: 'auto',
+        minHeight: '35.6rem',
         
     }
 
