@@ -11,8 +11,7 @@ const nextConfig = {
 
 // next.config.js
 
-module.exports = {
-  async rewrites() {
+async rewrites() {
     return [
       {
         source: '/success/:slug*',  // Adicione :slug* para capturar a parte dinâmica da URL
@@ -20,7 +19,6 @@ module.exports = {
       },
     ];
   },
-};
  
 }
 
