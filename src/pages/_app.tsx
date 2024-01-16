@@ -19,7 +19,6 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <Dialog.Root>
 
-    <CartProviderr>
     <CartProvider
       mode="payment"
       cartMode="client-only"
@@ -29,6 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
       currency="BRL"
       shouldPersist={true} 
       >
+    <CartProviderr>
     <AppContainer>
      <Head>
         <title>Ignite Shop</title>
@@ -38,8 +38,8 @@ export default function App({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />
       <ToastContainer />
     </AppContainer>
-    </CartProvider>
     </CartProviderr>
+    </CartProvider>
     </Dialog.Root>
   )
 }
