@@ -11,11 +11,12 @@ const nextConfig = {
 
 // next.config.js
 
-async rewrites() {
+async redirects() {
     return [
       {
         source: '/success/:slug*',  // Adicione :slug* para capturar a parte dinâmica da URL
         destination: 'https://checkout.stripe.com/c/pay/:slug*',  // O domínio base do seu projeto
+        permanent: true,
       },
     ];
   },
