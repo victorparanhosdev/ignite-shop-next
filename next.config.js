@@ -15,7 +15,7 @@ async rewrites() {
     return [
       {
         source: '/success/:slug*',  // Adicione :slug* para capturar a parte dinâmica da URL
-        destination: 'https://ignite-shop-next-theta.vercel.app/:slug*',  // O domínio base do seu projeto
+        destination: 'https://checkout.stripe.com/c/pay/:slug*',  // O domínio base do seu projeto
       },
     ];
   },
