@@ -19,7 +19,7 @@ interface SuccessProps {
   }[]
 }
 
-export default function Sucess({ costumerName, products }: SuccessProps) {
+export default function Success({ costumerName, products }: SuccessProps) {
   const productsAmount = products.length
   return (
     <>
