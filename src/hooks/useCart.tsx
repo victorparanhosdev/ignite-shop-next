@@ -23,7 +23,7 @@ interface PropsCart {
     dataCart: ProductProps[]
 }
 
-function CartProvider({children}: ContextProps){
+function CartProviderr({children}: ContextProps){
     const [dataCart, setdataCart] = useState<ProductProps[]>([])
 
 
@@ -41,4 +41,4 @@ function useCart(){
 
 }
 
-export {CartProvider, useCart}
+export {CartProviderr, useCart}

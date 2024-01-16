@@ -70,10 +70,8 @@ export function DialogBox() {
                 product: cart
             })
             const { checkoutUrl } = response.data
-            if(typeof window !== undefined) {
-
-                window.location.href = checkoutUrl
-            }
+            window.location.href = checkoutUrl
+    
         } catch (error) {
             setLoading(false)
             alert('Erro ao direcionar checkout!')
