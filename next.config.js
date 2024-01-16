@@ -14,8 +14,8 @@ const nextConfig = {
 async redirects() {
     return [
       {
-        source: 'https://ignite-shop-next-theta.vercel.app/success/:slug*',  // Adicione :slug* para capturar a parte dinâmica da URL
-        destination: 'https://checkout.stripe.com/c/pay/:slug*',  // O domínio base do seu projeto
+        source: '/success/:slug*',  // Adicione :slug* para capturar a parte dinâmica da URL
+        destination: 'https://ignite-shop-next-theta.vercel.app/success/:slug*',
         permanent: true,
       },
     ];
