@@ -9,14 +9,18 @@ const nextConfig = {
     
   },
 
-async rewrites() {
+// next.config.js
+
+module.exports = {
+  async rewrites() {
     return [
       {
-        source: '/success',  // A URL da sua página interna
-        destination: 'https://ignite-shop-next-theta.vercel.app'  // A URL de retorno configurada no Stripe
+        source: '/success/:slug*',  // Adicione :slug* para capturar a parte dinâmica da URL
+        destination: 'https://ignite-shop-next-theta.vercel.app/:slug*',  // O domínio base do seu projeto
       },
     ];
   },
+};
  
 }
 
