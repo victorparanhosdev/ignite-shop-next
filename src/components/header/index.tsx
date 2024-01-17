@@ -23,7 +23,6 @@ export function Header() {
         {pathname !== '/success' && <Dialog.Trigger asChild>
         <button>
           <Handbag weight="bold" fill="#8D8D99" size={24} />
-          ICON
           <span>{dataCart.length}</span>
         </button>
         </Dialog.Trigger>}
