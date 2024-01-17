@@ -9,7 +9,7 @@ import { stripe } from "@/lib/stripe";
 import Stripe from "stripe";
 import Link from "next/link";
 import Head from "next/head";
-import { Handbag } from '@phosphor-icons/react/dist/ssr';
+//import { Handbag } from '@phosphor-icons/react';
 import { MouseEvent, useState } from "react";
 import {toast } from 'react-toastify';
 
@@ -108,7 +108,7 @@ function handleAddCart(event: MouseEvent<HTMLButtonElement>, product: ProductPro
                 <strong>{product.name}</strong>
                 <span>{product.price}</span>
                 </div>
-                <button type="button" onClick={(e)=> handleAddCart(e, product)}><Handbag weight='bold' size={32} /></button>
+                <button type="button" onClick={(e)=> handleAddCart(e, product)}>{/*<Handbag weight='bold' size={32} />*/}</button>
               </footer>
             </Product>
          

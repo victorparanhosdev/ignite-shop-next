@@ -1,6 +1,6 @@
 import LogoImg from '../../assets/logo.svg'
 import Image from 'next/image'
-import {Handbag } from '@phosphor-icons/react/dist/ssr';
+//import {Handbag } from '@phosphor-icons/react';
 import { HomeHeader } from '@/components/header/header';
 import { useCart } from '@/hooks/useCart';
 import Link from 'next/link';
@@ -20,7 +20,8 @@ export function Header() {
 
         <Dialog.Trigger asChild>
         <button>
-          <Handbag weight="bold" fill="#8D8D99" size={24} />
+          {/*<Handbag weight="bold" fill="#8D8D99" size={24} />*/}
+          ICON
           <span>{dataCart.length}</span>
         </button>
         </Dialog.Trigger>
