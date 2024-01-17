@@ -7,6 +7,9 @@ export const HomeHeader = styled("header", {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
+    '&:not(:has(button))': {
+        justifyContent: 'center'
+    },
 
     '> a': {
         cursor: 'pointer',

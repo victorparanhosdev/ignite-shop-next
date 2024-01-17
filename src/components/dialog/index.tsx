@@ -6,8 +6,10 @@ import axios from "axios";
 import { useCart } from "@/hooks/useCart";
 import Image from "next/image";
 import { ProductProps } from "@/hooks/useCart";
-//import {SmileyXEyes} from '@phosphor-icons/react'
+
 import { toast } from "react-toastify";
+
+import {SmileyXEyes} from '@phosphor-icons/react/dist/ssr/SmileyXEyes'
 
 
 interface PropsState {
@@ -110,7 +112,7 @@ export function DialogBox() {
                                 )
                             }) : <div className={styled.CartEmpty}>
 
-                                <div>ICON{/*<SmileyXEyes size={200} />*/}</div>
+                                <div><SmileyXEyes size={200} /></div>
                                 <h1>Não há itens no seu carinho de compras</h1>
 
 
