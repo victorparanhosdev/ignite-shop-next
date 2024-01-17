@@ -6,7 +6,7 @@ import axios from "axios";
 import { useCart } from "@/hooks/useCart";
 import Image from "next/image";
 import { ProductProps } from "@/hooks/useCart";
-import {SmileyXEyes} from 'phosphor-react'
+import {SmileyXEyes} from '@phosphor-icons/react/dist/ssr'
 import { toast } from "react-toastify";
 
 

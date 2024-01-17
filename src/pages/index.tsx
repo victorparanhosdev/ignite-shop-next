@@ -9,7 +9,7 @@ import { stripe } from "@/lib/stripe";
 import Stripe from "stripe";
 import Link from "next/link";
 import Head from "next/head";
-import { Handbag } from 'phosphor-react';
+import { Handbag } from '@phosphor-icons/react/dist/ssr';
 import { MouseEvent, useState } from "react";
 import {toast } from 'react-toastify';
 
