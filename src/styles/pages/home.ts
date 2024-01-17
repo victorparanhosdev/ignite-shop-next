@@ -6,6 +6,7 @@ export const HomeContainer= styled('main', {
     minHeight: '65.6rem',
     maxWidth: 'calc(100vw - ((100vw - 118rem)/2))',
     marginLeft: 'auto',
+    marginBottom: '5rem',
 
     '@media (max-width:500px)': {
         minHeight: '35.6rem',

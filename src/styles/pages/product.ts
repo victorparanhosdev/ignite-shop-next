@@ -6,7 +6,7 @@ export const ProductHome = styled('div', {
     gap: '7.2rem',
     maxWidth: '118rem',
     width: '95%',
-    margin: '0 auto',
+    margin: '0 auto 5rem',
 
     '@media (max-width: 1000px)': {
         gap: '3rem'
