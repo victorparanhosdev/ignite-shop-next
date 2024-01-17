@@ -1,6 +1,6 @@
 import LogoImg from '../../assets/logo.svg'
 import Image from 'next/image'
-import {Handbag } from '@phosphor-icons/react';
+import {Handbag } from 'phosphor-react';
 import { HomeHeader } from '@/components/header/header';
 import { useCart } from '@/hooks/useCart';
 import Link from 'next/link';
