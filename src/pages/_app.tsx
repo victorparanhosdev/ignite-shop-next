@@ -7,7 +7,7 @@ import * as Dialog from '@radix-ui/react-dialog'
 import { ToastContainer } from 'react-toastify';
 import {CartProvider} from '../hooks/useCart'
 import 'react-toastify/dist/ReactToastify.css';
-import {IconContext} from '@phosphor-icons/react/dist/ssr'
+
 globalStyles()
 
 
@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
 
   return (
-    <IconContext.Provider value={{}}>
+
     <Dialog.Root>
     <CartProvider>
     <AppContainer>
@@ -30,6 +30,6 @@ export default function App({ Component, pageProps }: AppProps) {
     </AppContainer>
     </CartProvider>
     </Dialog.Root>
-    </IconContext.Provider>
+
   )
 }
